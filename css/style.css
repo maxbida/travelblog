@@ -1,0 +1,140 @@
+:root {
+  --orange-color: #FF6332;
+  --white-color: #FFFFFF;
+  --black-color: #000000;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-size: 18px;
+  font-family: 'Roboto', 'Arial', sans-serif;
+  font-weight: 300;
+  line-height: 1;
+  letter-spacing: 0.05em;
+  text-align: center;
+  color: var(--white-color);
+  background-color: var(--white-color);
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.header {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  background-image: url('../img/hero-bg.png');
+  background-color: var(--black-color);
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.header::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.header .container {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.header_headline {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 28px;
+  text-transform: uppercase;
+  line-height: 140%;
+}
+
+.header_headline b {
+  color: var(--orange-color);
+  font-weight: 900;
+}
+
+.header_arrow {
+  position: absolute;
+  bottom: 60px;
+  width: 30px;
+  height: 30px;
+  text-decoration: none;
+  background-image: url('../img/chevron-down.svg');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+}
+
+.gallery {
+  padding: 64px 0;
+}
+
+.gallery_list {
+  display: grid;
+  gap: 32px;
+}
+
+.gallery_list img {
+  width: 100%;
+}
+
+.instagram-feed_list {
+  display: grid;
+  
+}
+
+
+
+
+@media only screen and (min-width: 576px) {
+  .gallery_list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .instagram-feed_list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .header_headline {
+    font-size: 48px;
+  }
+
+  .header_arrow:hover {
+    animation-play-state: paused;
+  }
+
+  .gallery_list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .gallery_list li > span {
+    font-size: 30px;
+  }
+
+  .instagram-feed_hashtag {
+    font-size: 48px;
+  }
+}
